@@ -21,7 +21,7 @@ class Aluno {
 
     // Método para determinar a situação do aluno
     situacao() {
-        return this.media() > 6 ? "Aprovado" : "Reprovado";
+        return this.media() > 6 ? "Aprovado(a)" : "Reprovado(a)";
     }
 }
 
@@ -37,12 +37,16 @@ const alunos = [
 // Mostrar o Nome completo, Média e Situação do aluno
 function mostrarDadosAlunos(alunos) {
     alunos.forEach(aluno => {
-        console.log(`Nome Completo: ${aluno.nomeCompleto()}`);
-        console.log(`Média: ${aluno.media().toFixed(2)}`);
-        console.log(`Situação: ${aluno.situacao()}`);
-        console.log('-------------------------');
+      let alertMessage = "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_\n\n";
+      
+      alertMessage += `-------- Nome Completo --------\n${aluno.nomeCompleto()}\n\n`;
+      alertMessage += `-------- Média --------\n${aluno.media().toFixed(2)}\n\n`;
+      alertMessage += `-------- Situação --------\n${aluno.situacao()}\n\n`;
+      
+      alertMessage += `-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n`;
+      alert(alertMessage);
     });
 }
 
-// Mostra os dados de no mínimo 3 alunos
-mostrarDadosAlunos(alunos.slice(0, 3));
+// Mostra dados 5 alunos
+mostrarDadosAlunos(alunos);
